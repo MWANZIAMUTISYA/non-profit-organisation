@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Joshem Foundations </title>
+  <link rel="stylesheet" href="styles.css">
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+  <style>
+    /* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: white;
+  color: #333;
+  line-height: 1.6;
+  padding-top: 80px; /* Added padding to avoid header overlap */
+}
+
+/* Header */
+header {
+  background-color: blue;
+  color: #fff;
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  font-weight: bold;
+}
+
+header .logo {
+            text-align: center; /* Center the logo horizontally */
+            margin-top: 0px; /* Add space from the top of the page */
+        }
+
+        .logo img {
+            width: 100px; /* Set the logo's width */
+            height: 100px; /* Ensure height matches width for a circle */
+            border-radius: 50%; /* Make the logo a circle */
+            object-fit: cover; /* Ensure the image covers the area without distortion */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+            transition: transform 0.3s ease-in-out; /* Add a smooth transform transition */
+        }
+
+        .logo img:hover {
+            transform: scale(1.1); /* Slightly enlarge the logo on hover */
+        }
+
+header nav ul {
+  display: flex;
+  list-style-type: none;
+}
+
+header nav ul li {
+  margin-left: 20px;
+}
+
+header nav ul li a {
+  color: #fff;
+  text-decoration: blue;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+  color: #2ecc71;
+}
+
+/* About Section */
+.about {
+  padding: 80px 10%;
+  background-color: blue;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin-top: 120px;
+  max-width: 1200px;
+  margin: 120px auto;
+}
+
+.about-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.about-header h1 {
+  font-size: 42px;
+  color: #fcf8f8;
+  margin-bottom: 10px;
+}
+
+.about-header p {
+  font-size: 18px;
+  color: #fc2e2e;
+  margin-top: 10px;
+}
+
+/* Mission Section */
+.mission {
+  margin-bottom: 60px;
+}
+
+.mission h2 {
+  font-size: 32px;
+  color: #fa760b;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.mission p {
+  font-size: 18px;
+  color: rgb(243, 247, 243)1f3;
+  text-align: center;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+/* Features Section */
+.features {
+  background-color: #f8f8f8;
+  padding: 60px 0;
+  box-shadow: 0 4px 8px rgba(53, 50, 214, 0.05);
+  margin-bottom: 60px;
+}
+
+.features h2 {
+  font-size: 32px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.features ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.features ul li {
+  font-size: 18px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  color: #555;
+}
+
+.features ul li::before {
+  content: "✔️";
+  margin-right: 10px;
+  color: #fa760b;
+  font-size: 20px;
+}
+
+/* Team Section */
+.team {
+  padding: 60px 0;
+  text-align: center;
+}
+
+.team h2 {
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.team-members {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.team-member {
+  text-align: center;
+  max-width: 280px;
+  margin: 20px;
+}
+
+.team-member img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  border: 5px solid #fa760b;
+}
+
+.team-member h3 {
+  font-size: 22px;
+  color: #2c3e50;
+}
+
+.team-member p {
+  font-size: 16px;
+  color: #7f8c8d;
+}
+
+footer {
+  background-color: rgb(0, 162, 255);
+  color: white;
+  padding: 40px 20px;
+  position: relative;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px; /* Added gap between sections */
+}
+
+.footer-left, .footer-links, .footer-contact, .footer-newsletter, .footer-social, .footer-share {
+  flex: 1 1 280px;
+  margin: 20px;
+  min-width: 280px; /* Ensures sections are responsive */
+}
+
+.footer-logo {
+  width: 150px; /* Set the desired size of the logo */
+  height: 150px; /* Ensure the height matches the width for a perfect circle */
+  margin-bottom: 10px;
+  border-radius: 50%; /* This makes the logo circular */
+  object-fit: cover; /* Ensures the image covers the circle without distortion */
+}
+
+
+h3 {
+    color: rgb(8, 3, 2);
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: 600; /* Bold headings */
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+ul li a {
+  color: #ddd;
+  text-decoration: none;
+  display: block;
+  padding: 5px 0;
+  font-size: 16px;
+}
+
+ul li a:hover {
+  color: white;
+}
+
+input[type="email"] {
+  padding: 10px;
+  width: 80%;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: blue;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: blueviolet;
+}
+
+/* Socials Container Styling */
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Adds spacing between items */
+  justify-content: center; /* Centers the items horizontally */
+  padding: 20px;
+}
+
+.socials a {
+  display: flex;
+  align-items: center;
+  color: rgb(228, 243, 15); /* Sets the icon and text color */
+  text-decoration: none;
+  font-size: 30px;
+  padding: 10px 15px;
+  background-color: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.socials a i {
+  margin-right: 8px; /* Space between icon and text */
+}
+
+.socials a:hover {
+  background-color: none;
+  color: white; /* Ensures text color remains visible on hover */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .socials {
+    justify-content: space-around; /* Adjusts the alignment on tablets and smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .socials {
+    flex-direction: column; /* Stack the items vertically on smaller screens */
+    align-items: center; /* Centers the items */
+    gap: 15px; /* Reduces space between items */
+  }
+
+  .socials a {
+    font-size: 16px; /* Adjust font size on mobile */
+    padding: 8px 12px; /* Adjust padding for better mobile appearance */
+  }
+}
+
+.social-icons i,
+.share-icons i {
+  font-size: 20px; /* Set size of the icon */
+}
+
+
+
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: purple;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none; /* Hidden by default */
+  font-size: 18px;
+  width: 50px; /* Set a fixed size for the button */
+  height: 50px; /* Set a fixed size for the button */
+  text-align: center;
+  line-height: 1; /* Ensures the text is centered vertically */
+}
+
+.back-to-top:hover {
+  background-color: blue;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .back-to-top {
+    width: 45px;  /* Slightly smaller on tablets */
+    height: 45px; /* Adjust the height to match the new width */
+    font-size: 16px; /* Reduce the font size slightly */
+  }
+}
+
+@media (max-width: 480px) {
+  .back-to-top {
+    width: 40px;  /* Even smaller on mobile screens */
+    height: 40px; /* Adjust the height accordingly */
+    font-size: 14px; /* Further reduce the font size */
+  }
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-left,
+  .footer-links,
+  .footer-contact,
+  .footer-newsletter,
+  .footer-social,
+  .footer-share,
+  .back-to-top:hover{
+    flex: 1 1 100%;
+    text-align: center;
+  }
+
+  .footer-logo {
+    width: 120px;
+  }
+
+  input[type="email"] {
+    width: 90%;
+  }
+
+  button {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .social-icons a,
+  .share-icons a {
+    padding: 12px;
+    font-size: 18px;
+  }
+
+  .footer-logo {
+    width: 100px;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about {
+    padding: 80px 5%;
+  }
+
+  .features ul li {
+    font-size: 16px;
+  }
+
+  .team-members {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (max-width: 768px) {
+    /* Adjust header text */
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    /* Stack the navigation links vertically */
+    nav {
+        position: static;
+        margin-top: 20px;
+    }
+
+    nav ul {
+        display: block; /* Stack items vertically */
+        text-align: center; /* Center align the items */
+    }
+
+    nav ul li {
+        margin-bottom: 10px; /* Add spacing between links */
+    }
+
+    /* Make the links bigger for touch screens */
+    nav ul li a {
+        padding: 12px 30px;
+        font-size: 1.2rem;
+    }
+}
+
+/* Small Mobile Devices (up to 480px) */
+@media (max-width: 480px) {
+    nav ul li a {
+        padding: 10px 20px;
+        font-size: 1rem; /* Make links smaller on very small screens */
+    }
+
+    header h1 {
+        font-size: 1.6rem; /* Decrease header font size */
+    }
+
+    header p {
+        font-size: 0.9rem; /* Decrease paragraph font size */
+    }
+}
+
+/* Tablet Devices (768px to 1024px) */
+@media (max-width: 1024px) {
+    nav ul {
+        display: flex;
+        gap: 15px; /* Keep the links horizontal but space them */
+    }
+
+    nav ul li a {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+}
+
+#pop-out-container {
+            text-align: center;
+            margin-top: 70px;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+
+/* Text transition effect */
+#dynamic-text {
+            opacity: 0;
+            transition: opacity 2s ease-in-out;
+        }
+
+        @keyframes fadeInOut {
+            0% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+/* Contact Section */
+#contact-section {
+            background-color: rgb(219, 210, 210);
+            padding: 20px;
+            margin-top: 40px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        #contact-section h3 {
+            text-align: center;
+            color: blue;
+        }
+
+        #contact-section form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+
+        #contact-section input, #contact-section textarea {
+            width: 80%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        #contact-section button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #contact-section button:hover {
+            background-color: #0056b3;
+        }
+
+
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <header>
+    <div class="logo">
+      <img src="logo.jpg" alt="Logo"/>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="#">Goals</a></li>
+        <li><a href="#" id="team-btn">Team</a></li> <!-- Updated the Team button -->
+        <li><a href="#contact-section">Contact</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </nav>
+</header>
+
+  <!-- Main Section with Pop-Out Words -->
+  <main>
+    <div id="pop-out-container">
+        <h2 id="dynamic-text">This is some text</h2>
+    </div>
+</main>
+
+  <!-- About Section -->
+
+
+
+  <section class="about">
+    <div class="about-header">
+      <h1>Welcome to JOSHEM ORG!</h1>
+      <p>We specialize in creating custom websites that fit your business needs perfectly.</p>
+    </div>
+
+    <div class="mission">
+      <h2>Our Mission</h2>
+      <p>We empower businesses of all sizes by providing innovative, effective, and affordable web development solutions.</p>
+    </div>
+
+    <div class="features">
+      <h2>JOSHEM ORG OBJECTIVES</h2>
+      <ul>
+        <li><strong>QUICK SERVICES</strong> - Our services take maximum of 5 days to completion.</li>
+        <li><strong>Custom Designs</strong> - Tailored to match your brand.</li>
+        <li><strong>Mobile-First Approach</strong> - Optimized for every device.</li>
+        <li><strong>Fast & Secure</strong> - High performance with top security.</li>
+        <li><strong>Affordable</strong> - Transparent pricing without hidden fees.</li>
+        <li><strong>Expert Support</strong> - Ongoing support after launch.</li>
+      </ul>
+    </div>
+
+
+
+
+<!-- Team Section (Hidden by default) -->
+<section class="team" id="team-section" style="display: none;"> <!-- Initially hidden -->
+  <h2>Meet The Team</h2>
+  <div class="team-members">
+    <!-- Your team member details here as in your original HTML -->
+    <div class="team-member">
+      <img src="logo.jpg" alt="Founder">
+      <h3>FOUNDER</h3>
+      <p>Founder & Lead Developer</p>
+      <p>joshem@gmail.com</p>
+    </div>
+    <div class="team-member">
+      <img src="logo.jpg" alt="Aminah">
+      <h3>Winfred Shem</h3>
+      <p>Deputy Chair</p>
+      <p>winfred@gmail.com</p>
+    </div>
+      <div class="team-member">
+        <img src="logo.jpg" alt="Founder">
+        <h3>FOUNDER</h3>
+        <p>Founder & Lead Developer</p>
+        <p>joshem@gmail.com</p>
+      </div>
+      <div class="team-member">
+        <img src="logo.jpg" alt="Aminah">
+        <h3>Winfred Shem</h3>
+        <p>Deputy Chair</p>
+        <p>winfred@gmail.com</p>
+      </div>
+      <div class="team-member">
+        <img src="logo.jpg" alt="Aminah">
+        <h3>Winfred Kalewa</h3>
+        <p>Moderator</p>
+        <p>winfred@gmail.com</p>
+      </div>
+      <div class="team-member">
+        <img src="logo.jpg" alt="Aminah">
+        <h3>Mwanzia Mutisya</h3>
+        <p>Central Kenya representative</p>
+        <p>mpadevtech@yahoo.com</p>
+      </div>
+      <div class="team-member">
+        <img src="logo.jpg" alt="Aminah">
+        <h3>Mcolouch</h3>
+        <p>Coordinator</p>
+        <p>mcolouch@gmail.com</p>
+      </div>
+      <div class="team-member">
+        <img src="logo.jpg" alt="Aminah">
+        <h3>Lioness</h3>
+        <p>Secretary</p>
+        <p>lioness@gmail.com</p>
+      </div>
+      <div class="team-member">
+        <img src="logo.jpg" alt="Aminah">
+        <h3>Lovie</h3>
+        <p>Western Kenya Representative</p>
+        <p>lovie@gmail.com</p>
+      </div>
+      <div class="team-member">
+        <img src="logo.jpg" alt="Aminah">
+        <h3>Angola</h3>
+        <p>North Kenya Representative</p>
+        <p>angola@gmail.com</p>
+      </div>
+      <div class="team-member">
+        <img src="logo.jpg" alt="Aminah">
+        <h3>Raphael Mwambire</h3>
+        <p>Coastal Representative</p>
+        <p>raphael@gmail.com</p>
+      </div>
+      <div class="team-member">
+        <img src="logo.jpg" alt="Aminah">
+        <h3>Gladis</h3>
+        <p>Vice Secretary</p>
+        <p>gladis@gmail.com</p>
+      </div>
+      <div class="team-member">
+        <img src="logo.jpg" alt="Aminah">
+        <h3>Mumty</h3>
+        <p>Vice Moderator</p>
+        <p>mumty@gmail.com</p>
+      </div>
+      <div class="team-member">
+        <img src="logo.jpg" alt="Aminah">
+        <h3>Stephanie</h3>
+        <p>Treasurer</p>
+        <p>stephanie@gmail.com</p>
+      </div>
+      <div class="team-member">
+        <img src="logo.jpg" alt="MPAdevtech Team">
+        <h3>No name</h3>
+        <p>Secretary General</p>
+        <p>noname@gmail.com</p>
+      </div>
+    <!-- Add more team members as in your original HTML -->
+  </div>
+</section>
+   
+    
+
+  <section id="contact-section">
+    <h3>Contact Us</h3>
+    <form id="contact-form" action="submit_contact.php" method="POST">
+        <input type="text" id="name" name="name" placeholder="Your Name" required>
+        <input type="email" id="email" name="email" placeholder="Your Email" required>
+        <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Submit</button>
+    </form>
+</section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+        <div class="footer-left">
+            <p>© 2025 Joshem organisation. All rights reserved.Developed by <a href="http://masterprogrammeracademy.free.nf/">MPAdevtech Lmtd</a></p>
+        </div>
+        
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+                <li><a href="#https://masterprogrammeracademy.free.nf/about.html"><i class="fa fa-info-circle" aria-hidden="true"></i> About Us</a></li>
+                <li><a href="#"><i class="fa fa-server" aria-hidden="true"></i> Services</a></li>
+                <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i>Contact</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-contact">
+            <h3>Contact MPAdevtech</h3>
+            <p>Email: kpmlegit@gmail.com</p>
+            <p><a href="http://masterprogrammeracademy.free.nf/">MPAdevtech Website</a></p>
+            <p>Phone: +254 008 194 51</p>
+        </div>
+
+        <div class="footer-newsletter">
+            <h3>Subscribe to Our Newsletter</h3>
+            <form action="subscribe.php" method="POST">
+                <input type="email" name="email" placeholder="Enter your email" id="email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+        
+
+        <div class="footer">
+            <h3>Follow Us</h3>
+            
+            <div class="socials">
+              <a href="https://www.facebook.com/61551511364074/posts/122175139436050378/"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+              <a href="https://vm.tiktok.com/ZMk5vFXDw/"><i class="fab fa-tiktok" aria-hidden="true"></i></a>
+              <a href="https://www.linkedin.com/posts/kpm-legit-undefined-5a01922a7_apply-for-website-designs-and-development-ugcPost-7283932109646221313-AHyY?utm_source=social_share_send&utm_medium=android_app&utm_campaign=copy_link"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+              <a href="https://www.instagram.com/mpadevtech.lmtd?igsh=YzljYTk1ODg3Zg=="><i class="fab fa-instagram" aria-hidden="true"></i></a>
+              <a href="https://youtu.be/selkbLbfMzA?si=c4urr87U4oI7UeN4"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+              <a href="https://chat.whatsapp.com/IAv0NW1xCDgLvumwJkTDxI"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+          </div>
+          
+          
+              
+            
+        </div>
+        
+       
+    <!-- Back to Top Button -->
+    <button class="back-to-top" onclick="scrollToTop()">Top</button>
+</footer>
+<script>
+
+
+// JavaScript to show the team section when the "Team" link is clicked
+document.getElementById('team-btn').addEventListener('click', function(event) {
+  event.preventDefault();  // Prevent default anchor behavior
+
+  // Get the team section
+  const teamSection = document.getElementById('team-section');
+  
+  // Show the team section by changing its display style
+  teamSection.style.display = 'block';
+
+  // Optionally, scroll to the team section
+  teamSection.scrollIntoView({ behavior: 'smooth' });
+});
+
+  // When the 'Contact' link is clicked, the form section will be shown
+  document.querySelector('a[href="#contact-section"]').addEventListener('click', function(event) {
+            event.preventDefault();  // Prevents the default link behavior
+        
+            // Show the contact section
+            const contactSection = document.getElementById('contact-section');
+            contactSection.style.display = 'block';
+        
+            // Scroll to the contact section
+            contactSection.scrollIntoView({ behavior: 'smooth' });
+        });
+
+  let currentIndex = 0;
+        const dynamicTexts = [
+            { text: "Welcome to our interactive world! We believe in global services and support.", color: "#FF5733" },
+            { text: "Stay connected for more amazing updates. All updates will be shared here!", color: "#33C1FF" },
+            { text: "Did You Know? Who was the founder of Joshem Organisation? Explore new ideas, quizes and innovations here.", color: "#FF33A1" },
+            { text: "Get in touch with us anytime you want. We treasure you , we value every soul!", color: "#C733FF" },
+            { text: "Our mission is to inspire peaceful co-existence and globalisation of peaceful ideologies!", color: "#33FF57" }
+        ];
+
+        // Function to change the text with smooth transition and color change
+        function changeText() {
+            let dynamicTextElement = document.getElementById("dynamic-text");
+
+            // Fade out the current text before changing it
+            dynamicTextElement.style.opacity = 0;
+
+            setTimeout(() => {
+                // Change the text and color
+                currentIndex++;
+                if (currentIndex >= dynamicTexts.length) {
+                    currentIndex = 0;
+                }
+
+                let newText = dynamicTexts[currentIndex];
+                dynamicTextElement.textContent = newText.text;
+                dynamicTextElement.style.color = newText.color;
+
+                // Fade in the new text with smooth transition
+                dynamicTextElement.style.opacity = 1;
+            }, 1000); // Wait 2 seconds before changing to next text
+        }
+
+        // Auto change text every 5 seconds
+        setInterval(changeText, 3000);
+
+        // Initial text setup
+        window.onload = () => {
+            changeText();
+        };
+
+
+</script>
+</body>
+</html>
